@@ -12,7 +12,7 @@
 echo "Creating swapfile"
 sudo fallocate -l 32G /swapfile
 sudo chmod 600 /swapfile
-sudo mkswap /swapfile
+sudo mkswap /swapfile --label "swapfile"
 echo "Switching swap"
 sudo swapon /swapfile
 sudo swapoff /dev/mapper/cryptswap1
