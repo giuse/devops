@@ -35,6 +35,7 @@ echo "Schredding swapfile"
 echo "(feel free to interrupt this if you didn't"
 echo "  actually get to use the swap)"
 # Shredding alternatives: http://askubuntu.com/questions/57572/how-to-delete-files-in-secure-manner
+# sudo shred -uvn 1 /swapfile
 sudo shred -uvzn 0 /swapfile
 echo
 echo "Removing swapfile"
