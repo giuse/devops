@@ -49,9 +49,9 @@ KEY_NAME="${HOME}/.ssh/${SERVER_NAME}"
 echo -e "\nHost ${SERVER_NAME}\n\tHostName ${SERVER_IP}\n\tPort ${SERVER_PORT}
 \tUser ${USER_NAME}\n\tIdentityFile ${KEY_NAME}" >> "${HOME}/.ssh/config"
 
-# generate key -- quiet and no passphrase
+# generate key -- quiet and no passphrase (BEWARE)
 ssh-keygen -t rsa -b 4096 -C "$(whoami)@$(hostname)" -f "${KEY_NAME}" -q -N ""
-# make sure ssh-agent is pu and add the new key
+# make sure ssh-agent is up and add the new key
 eval "$(ssh-agent -s)"
 ssh-add "${KEY_NAME}"
 
