@@ -29,3 +29,11 @@ I recently read an article which changed my mindset from "my ssh key is my ID an
 I apply the same concept as password management: a different one for each server, and a password manager to handle the complexity. This script is a quick-setupper (is that even a word?) for the password manager that is `ssh-agent`.
 
 Make sure you manually deactivate the no-passphrase option in `ssh-keygen` for added safety (I take my own measures, as I hate typing passphrases each time I contact a remote).
+
+## `crypt_setup.sh`
+
+#### Prepare a key-accessed encrypted partition on your system.
+
+This is how I prepare a partition to unlock and mount by hand, where I store my backups.
+
+I keep the encryption key in a safe place, such as a (itself encrypted) usb stick or network storage.
