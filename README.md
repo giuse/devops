@@ -1,4 +1,11 @@
-A bunch of scripts to support working on a computer.
+A bunch of scripts to support working on (and around) a computer.
+
+## `shrinkpdf.sh`
+
+#### Reduces the size of your pdf
+
+Classic example: you need to email the scan of a document, but your scans are either too large to attach or horribly illegible. Enter `shrinkpdf`: it squeezes every ounce of performance out of `gs` to make small documents that look extremely good.  
+Had this script around since forever, never thought of moving it to the devops. But hey, makes sense to me :)
 
 ## `quick_swap.sh`
 
