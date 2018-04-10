@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # shrinkpdf: an utility to make pdf smaller
 #
 # usage: `shrinkpdf mydoc.pdf` => `mydoc_small.pdf`
@@ -10,7 +10,7 @@
 QUALITY=/ebook
 # IMGRES, FONTRES: resolution of image and fonts
 #   lower the first in image-heavy docs (e.g. scans), the second in text-heavy
-IMGRES=350
+IMGRES=200
 FONTRES=1200
 # SAMPLE: sampling method, don't touch unless a run takes too much
 SAMPLE=/Bicubic
@@ -27,12 +27,14 @@ gs  -q -dNOPAUSE -dBATCH -dSAFER \
   -dGrayImageResolution=${IMGRES} \
   -dMonoImageDownsampleType=${SAMPLE} \
   -dMonoImageResolution=${IMGRES} \
+  -sColorConversionStrategy=Gray \
+  -dProcessColorModel=/DeviceGray \
   -sDEVICE=pdfwrite \
-  -dCompatibilityLevel=1.3 \
+  -dCompatibilityLevel=1.4 \
   -dPDFSETTINGS=${QUALITY} \
   -dEmbedAllFonts=true \
   -dSubsetFonts=true \
-  -sOutputFile=${OUTPUT_NAME} \
+  -sOutputFile="$OUTPUT_NAME" \
   "$INPUT_NAME"
 
 
