@@ -47,7 +47,7 @@ KEY_NAME="${HOME}/.ssh/${SERVER_NAME}"
 
 # add basic server info into `config`
 echo -e "\nHost ${SERVER_NAME}\n\tHostName ${SERVER_IP}\n\tPort ${SERVER_PORT}
-\tUser ${USER_NAME}\n\tIdentityFile ${KEY_NAME}" >> "${HOME}/.ssh/config"
+\tUser ${USER_NAME}\n\tIdentitiesOnly yes\n\tIdentityFile ${KEY_NAME}" >> "${HOME}/.ssh/config"
 
 # generate key -- quiet and no passphrase (BEWARE)
 ssh-keygen -t rsa -b 4096 -C "$(whoami)@$(hostname)" -f "${KEY_NAME}" -q -N ""
