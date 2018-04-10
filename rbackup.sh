@@ -106,7 +106,7 @@ pre_call() {
 # Forces creation of link to current backup if not present
 force_create_cur() {
   newest="${path}/$( ${rcmd} ls -t1 -I ${cur} -I ${tmp} ${path} | head -1 )"
-  echo "  BEWARE! Link to latest backup not found\n    -> cannot continue\n  Most recent backup:\n    ${newest}\n  Required link name:\n    ${cur}\n  Link name:\n    ${cur}"
+  echo -e "  BEWARE! Link to latest backup not found\n    -> cannot continue\n  Most recent backup:\n    ${newest}\n  Required link name:\n    ${cur}\n  Link name:\n    ${cur}"
   read -p "  Do you wish me to create it for you? [y/n]: " -n 1 -r
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
